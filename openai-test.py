@@ -35,11 +35,10 @@ def chat(debug=False):
                 break
             response = generate_chat_response(user_input)
             print(
-                'gpt:',
+                colored('GPT:', 'black', 'on_white'),
                 colored(
                     response['choices'][0]['message']['content'],
-                    'white',
-                    'on_dark_grey',
+                    'light_red',
                 ),
             )
             if debug:
@@ -52,7 +51,7 @@ def image(debug=False):
 
     while True:
         try:
-            user_input = input('you: ')
+            user_input = input('Image prompt: ')
             if user_input.lower() in ['quit', 'exit']:
                 break
             response = generate_image_response(user_input)
