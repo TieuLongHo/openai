@@ -26,6 +26,8 @@ To use this program, follow the steps below:
 2. Run the command `python openai-test.py`.
 3. Follow the prompts to provide input for GPT and Dalle models to generate text and image respectively.
 
+<img src="resources/images/demo.jpg" width="600">
+
 ## Credits
 
 This program was created by Tieu Long Ho as part of an fun midnight test project.
