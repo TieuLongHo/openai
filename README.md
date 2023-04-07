@@ -1,7 +1,7 @@
 # ChatGPT and DALL-E CLI
 
 This Python program uses two different AI models - GPT and Dalle API - to generate text and images respectively. GPT is a text-generating AI model and Dalle is an image-generating AI model. The program can be used to generate text and images based on user input.
-![logo](resources/images/logo.jpg)
+<img src="resources/images/logo.jpg" width="500">
 
 ## Requirements
 
