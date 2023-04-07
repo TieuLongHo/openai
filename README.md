@@ -22,7 +22,7 @@ To get started with this program, follow the steps below:
 To use this program, follow the steps below:
 
 1. Open a terminal window and navigate to the directory where you have cloned the repository.
-2. Run the command `python openai.py`.
+2. Run the command `python openai-test.py`.
 3. Follow the prompts to provide input for GPT and Dalle models to generate text and image respectively.
 
 ## Credits

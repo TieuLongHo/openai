@@ -21,7 +21,7 @@ def generate_chat_response(user_input):
 
 
 def generate_image_response(user_input):
-    response = response = openai.Image.create(
+    response = openai.Image.create(
         prompt=user_input,
         n=3,
         size="1024x1024"
@@ -32,29 +32,36 @@ def generate_image_response(user_input):
 
 def chat(debug):
     while True:
-        user_input = input('you: ')
-        if user_input.lower() in ['quit', 'exit']:
-            break
-        response = generate_chat_response(user_input)
-        print("gpt:", colored(
-            response['choices'][0]['message']['content'], 'white', "on_dark_grey"))
-        if debug:
-            print_usage(response)
+        try:
+            user_input = input('you: ')
+            if user_input.lower() in ['quit', 'exit']:
+                break
+            response = generate_chat_response(user_input)
+            print("gpt:", colored(
+                response['choices'][0]['message']['content'], 'white', "on_dark_grey"))
+            if debug:
+                print_usage(response)
+        except Exception as e:
+            print(e)
 
 
 def image(debug):
-    while True:
-        user_input = input('you: ')
-        if user_input.lower() in ['quit', 'exit']:
-            break
-        response = generate_image_response(user_input)
 
-        for i, image in enumerate(response['data']):
-            text = f'image {i+1}'
-            print(f"\x1b]8;;{image['url']}\a{text}\x1b]8;;\a")
-            print(image['url'])
-        if debug:
-            print_usage(response)
+    while True:
+        try:
+            user_input = input('you: ')
+            if user_input.lower() in ['quit', 'exit']:
+                break
+            response = generate_image_response(user_input)
+
+            for i, image in enumerate(response['data']):
+                text = f'image {i+1}'
+                print(f"\x1b]8;;{image['url']}\a{text}\x1b]8;;\a")
+                print(image['url'])
+            if debug:
+                print_usage(response)
+        except Exception as e:
+            print(e)
 
 
 def print_usage(response):
